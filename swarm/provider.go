@@ -131,6 +131,11 @@ func Provider() *schema.Provider {
 				Sensitive:   true,
 				DefaultFunc: schema.EnvDefaultFunc("SSH_KEY", nil),
 			},
+			"skip_manager_validation": {
+				Type:        schema.TypeBool,
+				Optional:    true,
+				DefaultFunc: schema.EnvDefaultFunc("SKIP_MANAGER_VALIDATION", nil),
+			},
 		},
 		ResourcesMap: map[string]*schema.Resource{
 			"swarm_cluster": resourceCluster(),

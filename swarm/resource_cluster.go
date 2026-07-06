@@ -298,7 +298,8 @@ func resourceClusterUpdate(ctx context.Context, d *schema.ResourceData, m interf
 			}
 		}
 
-		if err := swarmManager.UpdateSwarm(vmnodes); err != nil {
+		force := d.Get("skip_manager_validation").(bool)
+		if err := swarmManager.UpdateSwarm(vmnodes, force); err != nil {
 			diags = append(diags, diag.Diagnostic{
 				Severity: diag.Error,
 				Summary:  "Unable to update swarm cluster",
