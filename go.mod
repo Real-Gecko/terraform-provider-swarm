@@ -2,7 +2,7 @@ module github.com/aucloud/terraform-provider-swarm
 
 go 1.17
 
-replace github.com/aucloud/go-swarm => github.com/Real-Gecko/go-swarm v0.0.0-20260706110711-5d35e624f642
+replace github.com/aucloud/go-swarm => github.com/Real-Gecko/go-swarm v0.0.0-20260710072332-1b85b24959ad
 
 require (
 	github.com/aucloud/go-swarm v0.0.0-20220315114454-382fc6f83fd1
